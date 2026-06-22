@@ -51,10 +51,11 @@ async fn node_info(context: web::Data<LemmyContext>) -> Result<HttpResponse, Err
   let json = NodeInfo {
     version: Some("2.1".to_string()),
     software: Some(NodeInfoSoftware {
-      name: Some("lemmy".to_string()),
+      name: Some("noxgram".to_string()),
       version: Some(VERSION.to_string()),
-      repository: Some("https://github.com/LemmyNet/lemmy".to_string()),
-      homepage: Some("https://join-lemmy.org/".to_string()),
+      // AGPL-3.0 §13: this MUST point at the published noxgram source.
+      repository: Some("https://github.com/noxgram/noxgram".to_string()),
+      homepage: Some("https://noxgram.app/".to_string()),
     }),
     protocols: Some(vec!["activitypub".to_string()]),
     usage: Some(NodeInfoUsage {
